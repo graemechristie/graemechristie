@@ -9,6 +9,6 @@ categories:
 # First Post #
 This is my Blog Post. There are many others like it but this is mine
 
-```C#
+```c#
 	var s = "This is my blog post";
 ``` 
