@@ -1,0 +1,14 @@
+---
+layout: post
+title: "New Blog"
+date: 2013-04-03 22:23
+comments: true
+categories: 
+---
+
+# First Post #
+This is my Blog Post. There are many others like it but this is mine
+
+```C#
+	var s = "This is my blog post";
+``` 
