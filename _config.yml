@@ -3,8 +3,8 @@
 # ----------------------- #
 
 url: http://graemechristie.github.com/graemechristie
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
+title: dev/null
+subtitle: The Developer Blog of Graeme Christie
 author: Graeme Christie
 simple_search: http://google.com/search
 description:
@@ -85,7 +85,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:graemechristiesblog
+disqus_short_name: graemechristiesblog
 disqus_show_comment_count: true
 
 # Google Analytics
