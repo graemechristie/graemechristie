@@ -79,7 +79,7 @@ An example of the HTML required to define a layout such is this follows:
 </div>
 ```
 
-Click [here](http://tobedone) to see an actual working example of this layout.
+Click [here](elastic-example/index.html) to see an actual working example of this layout.
 
 In my next blog post, I will go over the CSS code, and show how we generate it using less. 
 
