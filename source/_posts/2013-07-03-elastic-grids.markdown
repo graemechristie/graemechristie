@@ -12,7 +12,7 @@ Modern Web design has gravitated away from using tables for layout (as they are 
 
 #### The Elastic Grid system
 
-The Elastic Grid system allows us to define columns or rows, that can be either a fixed width within the parent container, or can stretch or shrink to consume all of the space available between a number of columns from the left of the area to a number of columns from the right of the area, or a number of rows from the top of the area to a number of rows from the bottom of the area. Columns are defined to be a fixed width (e.g. 60 pixels) and rows are defined to be a fixed height (e.g. 50 pixels). Areas that are fixed width areas are simply defined from a column on the left to another column on the left, a column on the right to another column on the right, at row at the top to another row at the top or a row at the bottom to another row at the bottom. 
+The Elastic Grid system allows us to define columns or rows, that can be either a fixed width within the parent container, or can stretch or shrink to consume all of the space available between a number of columns from the left of the area to a number of columns from the right of the area, or a number of rows from the top of the area to a number of rows from the bottom of the area. Columns are defined to be a fixed width (e.g. 40 pixels) and rows are defined to be a fixed height (e.g. 40 pixels). Areas that are fixed width areas are simply defined from a column on the left to another column on the left, a column on the right to another column on the right, at row at the top to another row at the top or a row at the bottom to another row at the bottom. 
 
 The following diagram illustrates how this layout method works for columns.
 
@@ -20,7 +20,7 @@ The following diagram illustrates how this layout method works for columns.
 
 Rows work in a similar fashion, although obviously vertically from the row top-1 down to the row bottom-1.
 
-As an example of the actual HTML code used for layout, a column that started 120 pixels from the left and was 600 pixels wide, and was in a row 40 pixels from the bottom and 80 pixels high would be defined as follows:
+As an example of the actual HTML code used for layout, a column that started 80 pixels from the left and was 400 pixels wide, and was in a row 40 pixels from the bottom and 80 pixels high would be defined as follows:
 
 ```html
 <div class="container-elastic">
@@ -41,7 +41,7 @@ An example of the HTML required to define a layout such is this follows:
 
 ```html
 <div class="container-elastic">
-    <div class="row top-1 stretch-to-bottom-2 layout-panel">
+    <div class="row top-1 stretch-to-bottom-2">
 		<!-- We don't have to use div's for our layout. -->
 		<!-- Fieldsets are often a good choice when you want an -->
 		<!-- area with a title (legend) -->
@@ -51,7 +51,7 @@ An example of the HTML required to define a layout such is this follows:
 			<!-- you will want to make this scrollable -->
 		</fieldset>
 
-		<fieldset class="column right-6 span-6">
+		<fieldset class="column right-1 span-6">
 			<div class="container-elastic nested">
            		<div class="row top-1 stretch-to-bottom-2">
 					<div class="scroll-pane">
@@ -79,7 +79,7 @@ An example of the HTML required to define a layout such is this follows:
 </div>
 ```
 
-Click [here](elastic-example/index.html) to see an actual working example of this layout.
+Click [here](elastic-example/index.html) to see an actual working example of an elastic layout.
 
 In my next blog post, I will go over the CSS code, and show how we generate it using less. 
 

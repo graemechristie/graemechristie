@@ -4,14 +4,6 @@
     Grid system with fixed width colums expanding from the left and right.
     Columns can stretch from left column to a right column to provide variable width columns.
 */
-
-/* apply a natural box layout model to all elements */
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .container-elastic {
   overflow: hidden;
   position: absolute;
@@ -21,8 +13,8 @@
   right: 5px;
 }
 .container-elastic.full-screen {
-  min-height: 600px;
-  min-width: 800px;
+  min-height: 480px;
+  min-width: 640px;
 }
 .container-elastic > .row {
   position: absolute;
