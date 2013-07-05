@@ -1,12 +1,64 @@
+
 <html>
 <head>
+  <title>Elastic Grid Example</title>
+  <link rel="stylesheet" type="text/css" href="grid.css">
+  <style>
+    body {
+      margin: 0px;
+/*      width: 100%;
+      height: 100%;
+      padding: 5px;*/
+    }
+
+    .button-bar {
+      float: right;
+    }
+
+    .button-bar button {
+      min-width: 60px;
+      min-height: 20px;
+      margin-left: 10px;
+    }
+
+  </style>
 </head>
-<body>
-   I'm still working on it ... check back in a day or two.
+<body style="width:100%; height: 100%">
+<div class="container-elastic full-screen">
+    <div class="row top-1 stretch-to-bottom-1 layout-panel">
+      <!-- We don't have to use div's for our layout. -->
+      <!-- Fieldsets are often a good choice when you want an -->
+      <!-- area with a title (legend) -->
+      <fieldset class="column left-1 stretch-to-right-10">
+        <legend>Variable width and height thing !</legend>
+        <div class="container-elastic nested">
+          <div class="row top-2 stretch-to-bottom-2">
+              A Grid or Something
+          </div>
+          <div class="row bottom-1">
+            <div class="column left-1 stretch-to-right-1">
+              <div class="button-bar"><button>FOO</button><button>BAR</button></div>
+            <div>
+          </div>
+        </div>
+      </fieldset>
 
-   Cheers,
-
-   Gra
-
+      <fieldset class="column right-1 span-9">
+        <legend>Fixed width thing !</legend>
+        <div class="container-elastic nested">
+          <div class="row top-2 stretch-to-bottom-2">
+            <div class="scroll-pane">
+              Some Fixed content .. like a form
+            </div>
+          </div>
+          <div class="row bottom-1">
+            <div class="column left-1 stretch-to-right-1">
+              <div class="button-bar"><button>BAT</button><button>BING</button></div>
+            <div>
+          </div>
+        </div>
+      </fieldset>
+  </div>   
+</div>
 </body>
 </html>

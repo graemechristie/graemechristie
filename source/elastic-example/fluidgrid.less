@@ -1,0 +1,74 @@
+
+
+@fluidNumColumns: 12;
+@fluidColumnPct: 1/@fluidNumColumns;
+@fluidNumRows: 30;
+
+/* Fluid Grid implementation */
+.container-fluid {
+
+    // Recursive method to create spans. Called below
+
+    .fluidColumns(@index)  when (@index > 0) {
+        .span-@{index} {
+            width:  percentage(@fluidColumnPct * @index);
+        }
+
+        .skip-@{index} {
+            margin-left:  percentage(@fluidColumnPct * @index);
+        }
+
+        .fluidColumns(@index - 1) 
+    }
+
+    .fluidColumns(0) {}
+
+    .fluidRows(@index)  when (@index > 0) {
+        &.span-@{index} {
+            height:  (@smallLineHeight + 15px) * @index;
+        }
+
+        &.skip-@{index} {
+            margin-top: (@smallLineHeight + 15px) * @index;
+        }
+
+        .fluidRows(@index - 1) 
+    }
+
+    .fluidRows(0) {}
+
+
+    // Stop panel collapsing to 0 height by clearing floats
+    &:after {
+        content:"";
+        display: table;
+        clear: both;
+    }
+    
+    line-height: @smallLineHeight + 5px;
+    font-size: @smallFontSize;
+    padding: 5px;
+
+    [class*='span-'] {
+        float: left;
+        min-height: 1px; // Stop Empty divs/spans collapsing
+        padding-right: 5px;
+    }
+
+    [class*='span-']:last-of-type {
+      padding-right: 0;
+    }
+
+    .row {
+        height: @smallLineHeight + 15px;
+        line-height: @smallLineHeight;
+        clear: both;
+        .fluidRows(@fluidNumRows);
+
+        .fluidColumns(@fluidNumColumns);
+    }
+
+    width: 100%;
+
+    
+}
