@@ -31,7 +31,7 @@ As an example of the actual HTML code used for layout, a column that started 80 
 </div>
 ``` 
 
-Elastic grids can be nested inside one another. For example you may wish to nest a grid with a Fixed width but variable height, inside an element in another grid with a fixed height but elastic width. Alternatively you may just wish to use an elastic grid for fixed layout, within another elastic grid. If you have content in a variable height area that you want to become scroll-able when the container is smaller than the content, simply apply a class with the overflow-x: auto style to a div surrounding that area. I use the convention of creating a  `scroll-pane` class in my solution to encapsulate this behavior. 
+Elastic grids can be nested inside one another. For example you may wish to nest a grid with a Fixed width but variable height, inside an element in another grid with a fixed height but elastic width. Alternatively you may just wish to use an elastic grid for fixed layout, within another elastic grid. If you have content in a variable height area that you want to become scrollable when the container is smaller than the content, simply apply a class with the overflow-x: auto style to a div surrounding that area. I use the convention of creating a  `scroll-pane` class in my solution to encapsulate this behavior. 
 
 The following is an example of a typical complex layout that you may want to implement in the application.
 
