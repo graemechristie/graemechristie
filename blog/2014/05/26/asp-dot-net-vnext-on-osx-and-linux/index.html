@@ -109,11 +109,11 @@
 
 <p>The second step is to install the &#8220;K Runtime Environment&#8221; or KRE. This is the command line environment that will build and run (not that there is really a distinction anymore) projects from their new project.json project files.</p>
 
-<p>Installation of the KRE is handled by the &#8220;K Version Manager&#8221; (KVM). This is a simple app that can install multiple versions of the KRE sideby side, and allow you to easily switch between them.</p>
+<p>Installation of the KRE is handled by the &#8220;K Version Manager&#8221; (KVM). This is a simple app that can install multiple versions of the KRE side by side, and allow you to easily switch between them.</p>
 
 <h3>Building Mono</h3>
 
-<p>I don&#8217;t want to go into too much detail here. There are plenty of guides around the internet on installing mono from source.</p>
+<p>I don&#8217;t want to go into too much detail here. There are plenty of <a href="http://www.mono-project.com/Compiling_Mono">guides around the internet</a> on installing mono from source.</p>
 
 <ul>
 <li>Install Mono as per the instructions at <a href="https://github.com/mono/mono">The Mono Github page</a>.</li>
@@ -133,7 +133,7 @@
 
 <h3>Installing KVM and the K Runtime Environment</h3>
 
-<p>Installing KVM is super simple. If you like you can go to the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation">Readme for the AspNet Home project</a> and follow the &#8220;Getting Started&#8221; instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.</p>
+<p>Installing KVM is super simple. If you like you can go to the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation#osxlinux">Readme for the AspNet Home project</a> and follow the &#8220;Getting Started&#8221; instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.</p>
 
 <p>KVM can be installed on any Linux or OSX system (that has bash or zsh and curl installed) with a single line.</p>
 
@@ -145,7 +145,7 @@
 
 <ul>
 <li>download kvm.sh and save it in ~/.kre/kvm/kvm.sh</li>
-<li>Add the command to run kvm.sh on every login to bash/zsh.</li>
+<li>add the command to run kvm.sh on every login to bash/zsh.</li>
 <li>kvm.sh will then be run via the <code>source</code> command. This adds the <code>kvm</code> command to the current shell.</li>
 <li>run <code>kvm upgrade</code>. This will download the latest KRE package, extract it to .kre/packages and add the bin folder to your path.</li>
 </ul>
@@ -153,7 +153,7 @@
 
 <p>Once this is done, all of the KRE commands will be available from shell prompt. Primarily this will be the <code>k</code> command used to run ASP.NET vNext Projects, and the <code>kpm</code> command used to restore packages.</p>
 
-<p>Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation">ASP.NET Home Project Readme</a> for examples of the various <code>kvm</code> commands.</p>
+<p>Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation#running-the-samples">ASP.NET Home Project Readme</a> for examples of the various <code>kvm</code> commands.</p>
 
 <h3>Okay, so I&#8217;ve got a Shiny New KRE &#8230;.</h3>
 
@@ -213,12 +213,12 @@
 
 
 <ul>
-<li>type <code>kpm restore --feed https://aspnetreadonly:4d8a2d9c-7b80-4162-9978-47e918c9658@www.myget.org/F/aspnetvnext/</code>
+<li>type <code>kpm restore --feed https://www.myget.org/F/aspnetvnext/</code>
 The K Package Manager will head off to the nuget repository and fetch <code>System.Console</code> and all it&#8217;s dependencies, based on the entry in your project.json file. Note that there is no need to use Nuget to install this package. The project.json entry is all the info kpm needs to fetch your dependencies.</li>
 </ul>
 
 
-<p> <em>Note: Because the ASP.NET vNext project is currently using a private nuget feed, we need to supply the nuget source on the command line. This would typically be provided in a NuGet.Config file on your Solution folder, and once the vNext is released you shouldn&#8217;t need one at all unless you are using your own private nuget feeds.</em></p>
+<p> <em>Note: Because the ASP.NET vNext project is currently using thier own nuget feed, we need to supply the nuget source on the command line. This can be provided in a NuGet.Config file in your Solution folder, and once the vNext is released you shouldn&#8217;t need one at all unless you are using your own private nuget feeds.</em></p>
 
 <p> <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/36968/482094/VORbSwiBWtopBnQ/upload.png" alt="kpm restore" /></p>
 
