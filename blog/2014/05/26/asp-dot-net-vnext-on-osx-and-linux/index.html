@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>dev/null</title>
+  <title>ASP.NET vNext on OSX and Linux - dev/null</title>
   <meta name="author" content="Graeme Christie">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://graemechristie.github.com/graemechristie">
+  <link rel="canonical" href="http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux">
   <link href="/graemechristie/favicon.png" rel="icon">
   <link href="/graemechristie/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/graemechristie/atom.xml" rel="alternate" title="dev/null" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/">ASP.NET vNext on OSX and Linux</a></h1>
+      <h1 class="entry-title">ASP.NET vNext on OSX and Linux</h1>
     
     
       <p class="meta">
@@ -89,14 +86,14 @@
 
 <time datetime="2014-05-26T21:32:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
         
-         | <a href="/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h3>So what is ASP.NET vNext ?</h3>
+<div class="entry-content"><h3>So what is ASP.NET vNext ?</h3>
 
 <p>Microsoft have recently released a preview of the next iteration of thier ASP.NET platform. I&#8217;m not going to go into the details here, people like <a href="http://www.hanselman.com/blog/IntroducingASPNETVNext.aspx">Scott Hanselman</a> have already done a fantastic job of that. I will however say that the changes, both technical and cultural, are huge. Two of those changes are particularly relevant to this blog post.</p>
 
@@ -243,22 +240,16 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
 
 <p>Hopefully this post has demonstrated that cross platform ASP.NET vNext functionality is available now. There are still rought edges, but progress is being made daily and first class support for OSX and Linux environments is on the Horizon. If you are having issues getting this working, feel free to drop into the <a href="https://jabbr.net/#/rooms/AspNetvNext">aspnetvnext room on Jabbr</a> and someone should be able to help you out.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/graemechristie/blog/2013/07/03/elastic-grids/">Elastic Grids</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Graeme Christie</span></span>
+
+      
 
 
 
@@ -270,149 +261,44 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
   
 
 
-<time datetime="2013-07-03T16:40:00+08:00" pubdate data-updated="true">Jul 3<span>rd</span>, 2013</time>
-        
-         | <a href="/graemechristie/blog/2013/07/03/elastic-grids/#disqus_thread">Comments</a>
-        
-      </p>
+<time datetime="2014-05-26T21:32:00+08:00" pubdate data-updated="true">May 26<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/graemechristie/blog/categories/aspnet/'>ASPNet</a>, <a class='category' href='/graemechristie/blog/categories/linux/'>Linux</a>, <a class='category' href='/graemechristie/blog/categories/osx/'>OSX</a>, <a class='category' href='/graemechristie/blog/categories/vnext/'>vNext</a>
+  
+</span>
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><h3>Grid Systems</h3>
-
-<p>Modern Web design has gravitated away from using tables for layout (as they are semantically incorrect, inflexible and lead to bloated hard to manage layout) and towards CSS based layouts. CSS grid systems simplify the application of CSS layouts. Popular grid systems such as the <a href="http://960.gs">960 Grid System</a> or <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> are great for content centric systems like CMS systems or Web Portals, but are not ideal for line of business applications. Primarily, they lack the ability to define areas for content that stretch to use all of the available screen real estate, along side areas that have fixed width&#8217;s or heights. The up and coming <a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexible Box Layout Module</a> is looking to address this, but it is <a href="http://caniuse.com/flexbox">likely to be years</a> before this is usable in most main stream browsers. In the mean time, I have attempted to address this concern with the <em>Elastic Grid System</em>.</p>
-
-<h4>The Elastic Grid system</h4>
-
-<p>The Elastic Grid system allows us to define columns or rows, that can be either a fixed width within the parent container, or can stretch or shrink to consume all of the space available between a number of columns from the left of the area to a number of columns from the right of the area, or a number of rows from the top of the area to a number of rows from the bottom of the area. Columns are defined to be a fixed width (e.g. 40 pixels) and rows are defined to be a fixed height (e.g. 40 pixels). Areas that are fixed width areas are simply defined from a column on the left to another column on the left, a column on the right to another column on the right, at row at the top to another row at the top or a row at the bottom to another row at the bottom.</p>
-
-<p>The following diagram illustrates how this layout method works for columns.</p>
-
-<p><img src="http://i.imgur.com/PL0w9fj.jpg" alt="" /></p>
-
-<p>Rows work in a similar fashion, although obviously vertically from the row top-1 down to the row bottom-1.</p>
-
-<p>As an example of the actual HTML code used for layout, a column that started 80 pixels from the left and was 400 pixels wide, and was in a row 40 pixels from the bottom and 80 pixels high would be defined as follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container-elastic&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row bottom-2 span-2&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column left-2 span-10&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Elastic grids can be nested inside one another. For example you may wish to nest a grid with a Fixed width but variable height, inside an element in another grid with a fixed height but elastic width. Alternatively you may just wish to use an elastic grid for fixed layout, within another elastic grid. If you have content in a variable height area that you want to become scrollable when the container is smaller than the content, simply apply a class with the overflow-x: auto style to a div surrounding that area. I use the convention of creating a  <code>scroll-pane</code> class in my solution to encapsulate this behavior.</p>
-
-<p>The following is an example of a typical complex layout that you may want to implement in the application.</p>
-
-<p><img src="http://i.imgur.com/ecMSJEz.jpg" alt="" /></p>
-
-<p>An example of the HTML required to define a layout such is this follows:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container-elastic&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row top-1 stretch-to-bottom-2&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="c">&lt;!-- We don&#39;t have to use div&#39;s for our layout. --&gt;</span>
-</span><span class='line'>      <span class="c">&lt;!-- Fieldsets are often a good choice when you want an --&gt;</span>
-</span><span class='line'>      <span class="c">&lt;!-- area with a title (legend) --&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;column left-1 stretch-to-right-7&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;legend&gt;</span>Variable width and height thing !<span class="nt">&lt;/legend&gt;</span>
-</span><span class='line'>          <span class="c">&lt;!-- Variable width and height content in here. It is likely --&gt;</span>
-</span><span class='line'>          <span class="c">&lt;!-- you will want to make this scrollable --&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/fieldset&gt;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;column right-1 span-6&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;container-elastic nested&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row top-1 stretch-to-bottom-2&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;scroll-pane&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>                      <span class="c">&lt;!-- Scrollable content in here. --&gt;</span>
-</span><span class='line'>&gt;
-</span><span class='line'>                      <span class="c">&lt;!-- As our parent container is a fixed width anyway --&gt;</span>
-</span><span class='line'>                      <span class="c">&lt;!-- we don&#39;t really need to define any columns if we don&#39;t want to --&gt;</span>
-</span><span class='line'>                      <span class="c">&lt;!-- Typically we would use a fluid grid in here to --&gt;</span>
-</span><span class='line'>                      <span class="c">&lt;!-- lay our content out inside our fixed width parent container --&gt;</span>
-</span><span class='line'>                  <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>                  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row bottom-1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>                      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column left-1 stretch-to-right-1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>                          <span class="c">&lt;!-- Buttons in here ! --&gt;</span>
-</span><span class='line'>                      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>                  <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>              <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;/div&gt;</span>          
-</span><span class='line'>      <span class="nt">&lt;/fieldset&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;row bottom-1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column left-1 stretch-to-right-1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>          <span class="c">&lt;!-- Buttons in here ! --&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Click <a href="elastic-example/index.html">here</a> to see an actual working example of an elastic layout.</p>
-
-<p>In my next blog post, I will go over the CSS code, and show how we generate it using less.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/" data-via="graeme_christie" data-counturl="http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/graemechristie/blog/2013/07/03/elastic-grids/" title="Previous Post: Elastic Grids">&laquo; Elastic Grids</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/graemechristie/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -433,7 +319,7 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/graemechristie">@graemechristie</a> on GitHub
@@ -466,6 +352,7 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -480,7 +367,10 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
       var disqus_shortname = 'graemechristiesblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/';
+        var disqus_url = 'http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

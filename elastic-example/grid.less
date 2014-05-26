@@ -1,0 +1,94 @@
+/* Elastic Layout 
+
+    Container stretches to 100% width and height with fixed width rows.
+    Grid system with fixed width colums expanding from the left and right.
+    Columns can stretch from left column to a right column to provide variable width columns.
+*/
+
+@elasticColumnWidth: 30px; 
+@elasticColumnGutter: 10px;
+@elasticRowHeight: 30px;
+@elasticRowGutter: 10px;
+@minScreenWidth: 640px;
+@minScreenHeight: 300px;
+@elasticNumberRows: 30;
+@elasticNumberColumns: 30;
+@containerPadding: 5px;
+
+
+// Less Loop to create elastic row css up to the number of defined rows
+
+.container-elastic {
+    .elasticRows(@index)  when (@index > 0) {
+        &.top-@{index} {
+            top: (@elasticRowHeight + @elasticRowGutter) * (@index - 1);
+        }
+
+        &.bottom-@{index} {
+            bottom: @elasticRowGutter + (@elasticRowHeight + @elasticRowGutter) * (@index - 1);
+            height: @elasticRowHeight;
+        }
+
+        &.stretch-to-bottom-@{index} {
+            bottom: @elasticRowGutter + (@elasticRowHeight + @elasticRowGutter) * (@index - 1);
+        }
+
+        &.span-@{index} {
+            height: (@elasticRowHeight * @index) + (@elasticRowGutter * (@index - 1)) !important;
+        }
+
+        .elasticRows(@index - 1)
+    }
+
+    .elasticRows(0) {}
+
+    .elasticColumns(@index)  when (@index > 0) {
+        &.left-@{index} {
+            left: (@elasticColumnWidth + @elasticColumnGutter) * (@index - 1);
+        }
+
+        &.span-@{index} {
+            width: (@elasticColumnWidth * @index) + (@elasticColumnGutter * (@index - 1));
+        }
+
+        &.right-@{index} {               
+            right: (@elasticColumnWidth + @elasticColumnGutter) * (@index - 1);
+        }
+
+        &.stretch-to-right-@{index} {               
+            right: (@elasticColumnWidth + @elasticColumnGutter) * (@index - 1);
+        }
+
+        .elasticColumns(@index - 1)
+    }
+
+
+    .elasticColumns(0) {}
+
+    overflow: hidden;
+    position: absolute;
+    top: @containerPadding;
+    bottom: @containerPadding;
+    left: @containerPadding;
+    right: @containerPadding;
+
+    &.full-screen {
+        min-height: @minScreenHeight;
+        min-width: @minScreenWidth;
+    }
+
+    > .row {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-right: 1px;
+        .elasticRows(@elasticNumberRows);
+
+        .column {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            .elasticColumns(@elasticNumberColumns);
+        }
+    }
+}

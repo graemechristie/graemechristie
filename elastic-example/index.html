@@ -1,0 +1,87 @@
+
+<html>
+  <head>
+    <title>Elastic Grid Example</title>
+    <link rel="stylesheet" type="text/css" href="grid.css">
+    <style>
+      /* apply a natural box layout model to all elements */
+      * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+      body {
+        margin: 0px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .button-bar {
+        float: right;
+      }
+
+      .button-bar button {
+        min-width: 60px;
+        min-height: 20px;
+        margin-left: 10px;
+      }
+
+      .scroll-pane {
+        overflow: auto;
+        width: 100%;
+        height: 100%;
+      }
+
+
+    </style>
+  </head>
+  <body>
+  <div class="container-elastic full-screen">
+      <div class="row top-1 stretch-to-bottom-1 layout-panel">
+        <fieldset class="column left-1 stretch-to-right-10">
+          <legend>Variable Width and Height Panel</legend>
+          <div class="container-elastic nested">
+            <div class="row top-2 stretch-to-bottom-2">
+                <div class="scroll-pane">
+                  <br/>
+                  <br>
+                  Try resizing your browser. You will notice that the buttons below stay at the bottom of the browser window, always accessible. The content on the right will become scrollable under a height of around 520px. Once the browser window is its minimum usable size of 640 x 300 (configurable as LESS variables), the variable content areas will stop shrinking and the whole browser window will become scrollable.
+                </div>
+            </div>
+            <div class="row bottom-1">
+              <div class="column left-1 stretch-to-right-1">
+                <div class="button-bar">
+                  <button>FOO</button><button>BAR</button>
+                </div>
+              <div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="column right-1 span-9">
+          <legend>Fixed Width Variable Height Panel</legend>
+          <div class="container-elastic">
+            <div class="row top-2 stretch-to-bottom-2">
+              <div class="scroll-pane">
+                Lorem ipsum dolor sit amet<br/><br/>
+                consectetur adipisicing elit<br/><br/>
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua<br/><br/>
+                Ut enim ad minim veniam<br/><br/>
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat<br/><br/>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur<br/><br/>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum<br/><br/>
+                Lorem ipsum dolor sit amet<br/><br/>
+                consectetur adipisicing elit<br/><br/>
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua<br/><br/>
+              </div>
+            </div>
+            <div class="row bottom-1">
+              <div class="column left-1 stretch-to-right-1">
+                <div class="button-bar">
+                  <button>BAT</button><button>BING</button>
+                </div>
+              <div>
+            </div>
+          </div>
+        </fieldset>
+    </div>   
+  </div>
+  </body>
+</html>

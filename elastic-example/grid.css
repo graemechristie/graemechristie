@@ -1,0 +1,779 @@
+/* Elastic Layout 
+
+    Container stretches to 100% width and height with fixed width rows.
+    Grid system with fixed width colums expanding from the left and right.
+    Columns can stretch from left column to a right column to provide variable width columns.
+*/
+.container-elastic {
+  overflow: hidden;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
+}
+.container-elastic.full-screen {
+  min-height: 300px;
+  min-width: 640px;
+}
+.container-elastic > .row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-right: 1px;
+}
+.container-elastic > .row.top-30 {
+  top: 1160px;
+}
+.container-elastic > .row.bottom-30 {
+  bottom: 1170px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-30 {
+  bottom: 1170px;
+}
+.container-elastic > .row.span-30 {
+  height: 1190px !important;
+}
+.container-elastic > .row.top-29 {
+  top: 1120px;
+}
+.container-elastic > .row.bottom-29 {
+  bottom: 1130px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-29 {
+  bottom: 1130px;
+}
+.container-elastic > .row.span-29 {
+  height: 1150px !important;
+}
+.container-elastic > .row.top-28 {
+  top: 1080px;
+}
+.container-elastic > .row.bottom-28 {
+  bottom: 1090px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-28 {
+  bottom: 1090px;
+}
+.container-elastic > .row.span-28 {
+  height: 1110px !important;
+}
+.container-elastic > .row.top-27 {
+  top: 1040px;
+}
+.container-elastic > .row.bottom-27 {
+  bottom: 1050px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-27 {
+  bottom: 1050px;
+}
+.container-elastic > .row.span-27 {
+  height: 1070px !important;
+}
+.container-elastic > .row.top-26 {
+  top: 1000px;
+}
+.container-elastic > .row.bottom-26 {
+  bottom: 1010px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-26 {
+  bottom: 1010px;
+}
+.container-elastic > .row.span-26 {
+  height: 1030px !important;
+}
+.container-elastic > .row.top-25 {
+  top: 960px;
+}
+.container-elastic > .row.bottom-25 {
+  bottom: 970px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-25 {
+  bottom: 970px;
+}
+.container-elastic > .row.span-25 {
+  height: 990px !important;
+}
+.container-elastic > .row.top-24 {
+  top: 920px;
+}
+.container-elastic > .row.bottom-24 {
+  bottom: 930px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-24 {
+  bottom: 930px;
+}
+.container-elastic > .row.span-24 {
+  height: 950px !important;
+}
+.container-elastic > .row.top-23 {
+  top: 880px;
+}
+.container-elastic > .row.bottom-23 {
+  bottom: 890px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-23 {
+  bottom: 890px;
+}
+.container-elastic > .row.span-23 {
+  height: 910px !important;
+}
+.container-elastic > .row.top-22 {
+  top: 840px;
+}
+.container-elastic > .row.bottom-22 {
+  bottom: 850px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-22 {
+  bottom: 850px;
+}
+.container-elastic > .row.span-22 {
+  height: 870px !important;
+}
+.container-elastic > .row.top-21 {
+  top: 800px;
+}
+.container-elastic > .row.bottom-21 {
+  bottom: 810px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-21 {
+  bottom: 810px;
+}
+.container-elastic > .row.span-21 {
+  height: 830px !important;
+}
+.container-elastic > .row.top-20 {
+  top: 760px;
+}
+.container-elastic > .row.bottom-20 {
+  bottom: 770px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-20 {
+  bottom: 770px;
+}
+.container-elastic > .row.span-20 {
+  height: 790px !important;
+}
+.container-elastic > .row.top-19 {
+  top: 720px;
+}
+.container-elastic > .row.bottom-19 {
+  bottom: 730px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-19 {
+  bottom: 730px;
+}
+.container-elastic > .row.span-19 {
+  height: 750px !important;
+}
+.container-elastic > .row.top-18 {
+  top: 680px;
+}
+.container-elastic > .row.bottom-18 {
+  bottom: 690px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-18 {
+  bottom: 690px;
+}
+.container-elastic > .row.span-18 {
+  height: 710px !important;
+}
+.container-elastic > .row.top-17 {
+  top: 640px;
+}
+.container-elastic > .row.bottom-17 {
+  bottom: 650px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-17 {
+  bottom: 650px;
+}
+.container-elastic > .row.span-17 {
+  height: 670px !important;
+}
+.container-elastic > .row.top-16 {
+  top: 600px;
+}
+.container-elastic > .row.bottom-16 {
+  bottom: 610px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-16 {
+  bottom: 610px;
+}
+.container-elastic > .row.span-16 {
+  height: 630px !important;
+}
+.container-elastic > .row.top-15 {
+  top: 560px;
+}
+.container-elastic > .row.bottom-15 {
+  bottom: 570px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-15 {
+  bottom: 570px;
+}
+.container-elastic > .row.span-15 {
+  height: 590px !important;
+}
+.container-elastic > .row.top-14 {
+  top: 520px;
+}
+.container-elastic > .row.bottom-14 {
+  bottom: 530px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-14 {
+  bottom: 530px;
+}
+.container-elastic > .row.span-14 {
+  height: 550px !important;
+}
+.container-elastic > .row.top-13 {
+  top: 480px;
+}
+.container-elastic > .row.bottom-13 {
+  bottom: 490px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-13 {
+  bottom: 490px;
+}
+.container-elastic > .row.span-13 {
+  height: 510px !important;
+}
+.container-elastic > .row.top-12 {
+  top: 440px;
+}
+.container-elastic > .row.bottom-12 {
+  bottom: 450px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-12 {
+  bottom: 450px;
+}
+.container-elastic > .row.span-12 {
+  height: 470px !important;
+}
+.container-elastic > .row.top-11 {
+  top: 400px;
+}
+.container-elastic > .row.bottom-11 {
+  bottom: 410px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-11 {
+  bottom: 410px;
+}
+.container-elastic > .row.span-11 {
+  height: 430px !important;
+}
+.container-elastic > .row.top-10 {
+  top: 360px;
+}
+.container-elastic > .row.bottom-10 {
+  bottom: 370px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-10 {
+  bottom: 370px;
+}
+.container-elastic > .row.span-10 {
+  height: 390px !important;
+}
+.container-elastic > .row.top-9 {
+  top: 320px;
+}
+.container-elastic > .row.bottom-9 {
+  bottom: 330px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-9 {
+  bottom: 330px;
+}
+.container-elastic > .row.span-9 {
+  height: 350px !important;
+}
+.container-elastic > .row.top-8 {
+  top: 280px;
+}
+.container-elastic > .row.bottom-8 {
+  bottom: 290px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-8 {
+  bottom: 290px;
+}
+.container-elastic > .row.span-8 {
+  height: 310px !important;
+}
+.container-elastic > .row.top-7 {
+  top: 240px;
+}
+.container-elastic > .row.bottom-7 {
+  bottom: 250px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-7 {
+  bottom: 250px;
+}
+.container-elastic > .row.span-7 {
+  height: 270px !important;
+}
+.container-elastic > .row.top-6 {
+  top: 200px;
+}
+.container-elastic > .row.bottom-6 {
+  bottom: 210px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-6 {
+  bottom: 210px;
+}
+.container-elastic > .row.span-6 {
+  height: 230px !important;
+}
+.container-elastic > .row.top-5 {
+  top: 160px;
+}
+.container-elastic > .row.bottom-5 {
+  bottom: 170px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-5 {
+  bottom: 170px;
+}
+.container-elastic > .row.span-5 {
+  height: 190px !important;
+}
+.container-elastic > .row.top-4 {
+  top: 120px;
+}
+.container-elastic > .row.bottom-4 {
+  bottom: 130px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-4 {
+  bottom: 130px;
+}
+.container-elastic > .row.span-4 {
+  height: 150px !important;
+}
+.container-elastic > .row.top-3 {
+  top: 80px;
+}
+.container-elastic > .row.bottom-3 {
+  bottom: 90px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-3 {
+  bottom: 90px;
+}
+.container-elastic > .row.span-3 {
+  height: 110px !important;
+}
+.container-elastic > .row.top-2 {
+  top: 40px;
+}
+.container-elastic > .row.bottom-2 {
+  bottom: 50px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-2 {
+  bottom: 50px;
+}
+.container-elastic > .row.span-2 {
+  height: 70px !important;
+}
+.container-elastic > .row.top-1 {
+  top: 0px;
+}
+.container-elastic > .row.bottom-1 {
+  bottom: 10px;
+  height: 30px;
+}
+.container-elastic > .row.stretch-to-bottom-1 {
+  bottom: 10px;
+}
+.container-elastic > .row.span-1 {
+  height: 30px !important;
+}
+.container-elastic > .row .column {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+.container-elastic > .row .column.left-30 {
+  left: 1160px;
+}
+.container-elastic > .row .column.span-30 {
+  width: 1190px;
+}
+.container-elastic > .row .column.right-30 {
+  right: 1160px;
+}
+.container-elastic > .row .column.stretch-to-right-30 {
+  right: 1160px;
+}
+.container-elastic > .row .column.left-29 {
+  left: 1120px;
+}
+.container-elastic > .row .column.span-29 {
+  width: 1150px;
+}
+.container-elastic > .row .column.right-29 {
+  right: 1120px;
+}
+.container-elastic > .row .column.stretch-to-right-29 {
+  right: 1120px;
+}
+.container-elastic > .row .column.left-28 {
+  left: 1080px;
+}
+.container-elastic > .row .column.span-28 {
+  width: 1110px;
+}
+.container-elastic > .row .column.right-28 {
+  right: 1080px;
+}
+.container-elastic > .row .column.stretch-to-right-28 {
+  right: 1080px;
+}
+.container-elastic > .row .column.left-27 {
+  left: 1040px;
+}
+.container-elastic > .row .column.span-27 {
+  width: 1070px;
+}
+.container-elastic > .row .column.right-27 {
+  right: 1040px;
+}
+.container-elastic > .row .column.stretch-to-right-27 {
+  right: 1040px;
+}
+.container-elastic > .row .column.left-26 {
+  left: 1000px;
+}
+.container-elastic > .row .column.span-26 {
+  width: 1030px;
+}
+.container-elastic > .row .column.right-26 {
+  right: 1000px;
+}
+.container-elastic > .row .column.stretch-to-right-26 {
+  right: 1000px;
+}
+.container-elastic > .row .column.left-25 {
+  left: 960px;
+}
+.container-elastic > .row .column.span-25 {
+  width: 990px;
+}
+.container-elastic > .row .column.right-25 {
+  right: 960px;
+}
+.container-elastic > .row .column.stretch-to-right-25 {
+  right: 960px;
+}
+.container-elastic > .row .column.left-24 {
+  left: 920px;
+}
+.container-elastic > .row .column.span-24 {
+  width: 950px;
+}
+.container-elastic > .row .column.right-24 {
+  right: 920px;
+}
+.container-elastic > .row .column.stretch-to-right-24 {
+  right: 920px;
+}
+.container-elastic > .row .column.left-23 {
+  left: 880px;
+}
+.container-elastic > .row .column.span-23 {
+  width: 910px;
+}
+.container-elastic > .row .column.right-23 {
+  right: 880px;
+}
+.container-elastic > .row .column.stretch-to-right-23 {
+  right: 880px;
+}
+.container-elastic > .row .column.left-22 {
+  left: 840px;
+}
+.container-elastic > .row .column.span-22 {
+  width: 870px;
+}
+.container-elastic > .row .column.right-22 {
+  right: 840px;
+}
+.container-elastic > .row .column.stretch-to-right-22 {
+  right: 840px;
+}
+.container-elastic > .row .column.left-21 {
+  left: 800px;
+}
+.container-elastic > .row .column.span-21 {
+  width: 830px;
+}
+.container-elastic > .row .column.right-21 {
+  right: 800px;
+}
+.container-elastic > .row .column.stretch-to-right-21 {
+  right: 800px;
+}
+.container-elastic > .row .column.left-20 {
+  left: 760px;
+}
+.container-elastic > .row .column.span-20 {
+  width: 790px;
+}
+.container-elastic > .row .column.right-20 {
+  right: 760px;
+}
+.container-elastic > .row .column.stretch-to-right-20 {
+  right: 760px;
+}
+.container-elastic > .row .column.left-19 {
+  left: 720px;
+}
+.container-elastic > .row .column.span-19 {
+  width: 750px;
+}
+.container-elastic > .row .column.right-19 {
+  right: 720px;
+}
+.container-elastic > .row .column.stretch-to-right-19 {
+  right: 720px;
+}
+.container-elastic > .row .column.left-18 {
+  left: 680px;
+}
+.container-elastic > .row .column.span-18 {
+  width: 710px;
+}
+.container-elastic > .row .column.right-18 {
+  right: 680px;
+}
+.container-elastic > .row .column.stretch-to-right-18 {
+  right: 680px;
+}
+.container-elastic > .row .column.left-17 {
+  left: 640px;
+}
+.container-elastic > .row .column.span-17 {
+  width: 670px;
+}
+.container-elastic > .row .column.right-17 {
+  right: 640px;
+}
+.container-elastic > .row .column.stretch-to-right-17 {
+  right: 640px;
+}
+.container-elastic > .row .column.left-16 {
+  left: 600px;
+}
+.container-elastic > .row .column.span-16 {
+  width: 630px;
+}
+.container-elastic > .row .column.right-16 {
+  right: 600px;
+}
+.container-elastic > .row .column.stretch-to-right-16 {
+  right: 600px;
+}
+.container-elastic > .row .column.left-15 {
+  left: 560px;
+}
+.container-elastic > .row .column.span-15 {
+  width: 590px;
+}
+.container-elastic > .row .column.right-15 {
+  right: 560px;
+}
+.container-elastic > .row .column.stretch-to-right-15 {
+  right: 560px;
+}
+.container-elastic > .row .column.left-14 {
+  left: 520px;
+}
+.container-elastic > .row .column.span-14 {
+  width: 550px;
+}
+.container-elastic > .row .column.right-14 {
+  right: 520px;
+}
+.container-elastic > .row .column.stretch-to-right-14 {
+  right: 520px;
+}
+.container-elastic > .row .column.left-13 {
+  left: 480px;
+}
+.container-elastic > .row .column.span-13 {
+  width: 510px;
+}
+.container-elastic > .row .column.right-13 {
+  right: 480px;
+}
+.container-elastic > .row .column.stretch-to-right-13 {
+  right: 480px;
+}
+.container-elastic > .row .column.left-12 {
+  left: 440px;
+}
+.container-elastic > .row .column.span-12 {
+  width: 470px;
+}
+.container-elastic > .row .column.right-12 {
+  right: 440px;
+}
+.container-elastic > .row .column.stretch-to-right-12 {
+  right: 440px;
+}
+.container-elastic > .row .column.left-11 {
+  left: 400px;
+}
+.container-elastic > .row .column.span-11 {
+  width: 430px;
+}
+.container-elastic > .row .column.right-11 {
+  right: 400px;
+}
+.container-elastic > .row .column.stretch-to-right-11 {
+  right: 400px;
+}
+.container-elastic > .row .column.left-10 {
+  left: 360px;
+}
+.container-elastic > .row .column.span-10 {
+  width: 390px;
+}
+.container-elastic > .row .column.right-10 {
+  right: 360px;
+}
+.container-elastic > .row .column.stretch-to-right-10 {
+  right: 360px;
+}
+.container-elastic > .row .column.left-9 {
+  left: 320px;
+}
+.container-elastic > .row .column.span-9 {
+  width: 350px;
+}
+.container-elastic > .row .column.right-9 {
+  right: 320px;
+}
+.container-elastic > .row .column.stretch-to-right-9 {
+  right: 320px;
+}
+.container-elastic > .row .column.left-8 {
+  left: 280px;
+}
+.container-elastic > .row .column.span-8 {
+  width: 310px;
+}
+.container-elastic > .row .column.right-8 {
+  right: 280px;
+}
+.container-elastic > .row .column.stretch-to-right-8 {
+  right: 280px;
+}
+.container-elastic > .row .column.left-7 {
+  left: 240px;
+}
+.container-elastic > .row .column.span-7 {
+  width: 270px;
+}
+.container-elastic > .row .column.right-7 {
+  right: 240px;
+}
+.container-elastic > .row .column.stretch-to-right-7 {
+  right: 240px;
+}
+.container-elastic > .row .column.left-6 {
+  left: 200px;
+}
+.container-elastic > .row .column.span-6 {
+  width: 230px;
+}
+.container-elastic > .row .column.right-6 {
+  right: 200px;
+}
+.container-elastic > .row .column.stretch-to-right-6 {
+  right: 200px;
+}
+.container-elastic > .row .column.left-5 {
+  left: 160px;
+}
+.container-elastic > .row .column.span-5 {
+  width: 190px;
+}
+.container-elastic > .row .column.right-5 {
+  right: 160px;
+}
+.container-elastic > .row .column.stretch-to-right-5 {
+  right: 160px;
+}
+.container-elastic > .row .column.left-4 {
+  left: 120px;
+}
+.container-elastic > .row .column.span-4 {
+  width: 150px;
+}
+.container-elastic > .row .column.right-4 {
+  right: 120px;
+}
+.container-elastic > .row .column.stretch-to-right-4 {
+  right: 120px;
+}
+.container-elastic > .row .column.left-3 {
+  left: 80px;
+}
+.container-elastic > .row .column.span-3 {
+  width: 110px;
+}
+.container-elastic > .row .column.right-3 {
+  right: 80px;
+}
+.container-elastic > .row .column.stretch-to-right-3 {
+  right: 80px;
+}
+.container-elastic > .row .column.left-2 {
+  left: 40px;
+}
+.container-elastic > .row .column.span-2 {
+  width: 70px;
+}
+.container-elastic > .row .column.right-2 {
+  right: 40px;
+}
+.container-elastic > .row .column.stretch-to-right-2 {
+  right: 40px;
+}
+.container-elastic > .row .column.left-1 {
+  left: 0px;
+}
+.container-elastic > .row .column.span-1 {
+  width: 30px;
+}
+.container-elastic > .row .column.right-1 {
+  right: 0px;
+}
+.container-elastic > .row .column.stretch-to-right-1 {
+  right: 0px;
+}
