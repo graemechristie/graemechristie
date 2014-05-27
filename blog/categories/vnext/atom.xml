@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vNext | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/vnext/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-27T08:38:49+08:00</updated>
+  <updated>2014-05-27T10:35:22+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -20,17 +20,17 @@
     <id>http://graemechristie.github.com/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux</id>
     <content type="html"><![CDATA[<h3>So what is ASP.NET vNext ?</h3>
 
-<p>Microsoft have recently released a preview of the next iteration of thier ASP.NET platform. I'm not going to go into the details here, people like <a href="http://www.hanselman.com/blog/IntroducingASPNETVNext.aspx">Scott Hanselman</a> have already done a fantastic job of that. I will however say that the changes, both technical and cultural, are huge. Two of those changes are particularly relevant to this blog post.</p>
+<p>Microsoft have recently released a preview of the next iteration of their ASP.NET platform. I'm not going to go into the details here, people like <a href="http://www.hanselman.com/blog/IntroducingASPNETVNext.aspx">Scott Hanselman</a> have already done a fantastic job of that. I will however say that the changes, both technical and cultural, are huge. Two of those changes are particularly relevant to this blog post.</p>
 
-<p>Firstly, ASP.NET vNext is fully open source. People like you and me are able to get in on the ground floor, try out the bits and pieces and even contribute -  pretty much from the projects inception.</p>
+<p>Firstly, ASP.NET vNext is fully open source. People like you and me are able to get in on the ground floor, try out the bits and pieces and even contribute -  pretty much from the project's inception.</p>
 
-<p>Secondly, ASP.NET vNext is cross platform, and embraces non Windows hosts as first class citizens. Microsoft are fully integrating Mono and Linux into their build environment and test matrix, and are actively working with the community to make Mono a top class platform for hosting ASP.NET. That being said, these are early days and the team is still ironing out issues with the Mono environment.</p>
+<p>Secondly, ASP.NET vNext is cross platform, and embraces non Windows hosts as first class citizens. Microsoft are fully integrating Mono and Linux into their build environment and test matrix, and are actively working with the community to make Mono a top class platform for hosting ASP.NET. That being said, these are early days, and the team is still ironing out issues with the Mono environment.</p>
 
 <h3>Getting ASP.NET vNext up and running on OSX and Linux</h3>
 
 <p>There are two main steps to getting to the point where we can run ASP.NET vNext applications on our non Windows system.</p>
 
-<p>The first is to install Mono. Normally this would be a no brainer, however as all this stuff is very shiny and new there are fixes and features that are currently only in the bleeding edge source code of Mono and have not been released as a package as yet. In order to get these fixes we are going to need to build mono from the latest source code located in the mono git repository.</p>
+<p>The first is to install Mono. Normally this would be a no brainer; however as all this stuff is very shiny and new there are fixes and features that are currently only in the bleeding edge source code of Mono and have not been released as a package as yet. In order to get these fixes we are going to need to build mono from the latest source code located in the mono git repository.</p>
 
 <p>The second step is to install the "K Runtime Environment" or KRE. This is the command line environment that will build and run (not that there is really a distinction anymore) projects from their new project.json project files.</p>
 
@@ -85,7 +85,7 @@ curl https://raw.githubusercontent.com/graemechristie/Home/KvmShellImplementatio
 
 <h3>Okay, so I've got a Shiny New KRE ....</h3>
 
-<p>So lets point it at something. We could download one of the many samples from the aspnet repository, however just to prove we have everything we need to build and run ASP.NET vNext apps on OSX and Linux, lets create a very basic project from scratch.</p>
+<p>So let's point it at something. We could download one of the many samples from the aspnet repository, however just to prove we have everything we need to build and run ASP.NET vNext apps on OSX and Linux, lets create a very basic project from scratch.</p>
 
 <ul>
 <li><p>Create a folder called <em>HelloKRuntime</em> somewhere on your system and <code>cd</code> into that folder</p></li>
@@ -123,11 +123,11 @@ using System;</p>
 <p>}
 ```</p></li>
 <li><p>type <code>kpm restore -s https://www.myget.org/F/aspnetvnext/</code>
-The K Package Manager will head off to the nuget repository and fetch <code>System.Console</code> and all it's dependencies, based on the entry in your project.json file. Note that there is no need to use Nuget to install this package. The project.json entry is all the info kpm needs to fetch your dependencies.</p></li>
+The K Package Manager will head off to the nuget repository and fetch <code>System.Console</code> and all its dependencies, based on the entry in your project.json file. Note that there is no need to use Nuget to install this package. The project.json entry is all the info kpm needs to fetch your dependencies.</p></li>
 </ul>
 
 
-<p> <em>Note: Because the ASP.NET vNext project is currently using thier own nuget feed, we need to supply the nuget source on the command line. This can be provided in a NuGet.Config file in your Solution folder, and once the vNext is released you shouldn't need one at all unless you are using your own private nuget feeds.</em></p>
+<p> <em>Note: Because the ASP.NET vNext project is currently using their own nuget feed, we need to supply the nuget source on the command line. This can be provided in a NuGet.Config file in your Solution folder, and once the vNext is released you shouldn't need one at all unless you are using your own private nuget feeds.</em></p>
 
 <p> <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/36968/482094/VORbSwiBWtopBnQ/upload.png" alt="kpm restore" /></p>
 
