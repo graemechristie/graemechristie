@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vNext | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/vnext/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-27T01:43:29+08:00</updated>
+  <updated>2014-05-27T08:38:49+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -45,10 +45,13 @@
 <li>You will need an earlier mono release installed in order to build Mono from source (Mono uses Mono to build itself)</li>
 <li>You will need autoconf, libtool and and a few oher common dev tools installed on your system.</li>
 <li>If you are on linux, you will need to run <code>mozroots --import --sync</code> after installing mono to avoid certificate/trust issues down the line</li>
-<li>If you are on OSX you will want to edit /private/etc/paths and move the line <code>/usr/local/bin</code> before the line <code>/usr/bin</code> so the system finds the new mono version on the path before the old one.
-<em>caveat: This may totally break your system if you have lots of crazy stuff in /usr/local/bin. If your not sure about this, wait for a supported official release of Mono</em></li>
+<li>If you are on OSX you will want to edit /private/etc/paths and move the line <code>/usr/local/bin</code> before the line <code>/usr/bin</code> so the system finds the new mono version on the path before the old one.</li>
 </ul>
 
+
+<p> <em>caveat: This may totally break your system if you have lots of crazy stuff in /usr/local/bin. If your not sure about this, wait for a supported official release of Mono</em></p>
+
+<p> <strong> Update: As suggested in the comments if your worried about messing with your path the better solution here would be to add --prefix=/opt/mono when running autogen.sh for the mono build and then add /opt/mono/bin to your path</strong></p>
 
 <p>Once all this is done, run <code>mono --version</code>. You should see that you are running Mono version 3.4.1 or newer.</p>
 
@@ -119,7 +122,7 @@ using System;</p>
 
 <p>}
 ```</p></li>
-<li><p>type <code>kpm restore --feed https://www.myget.org/F/aspnetvnext/</code>
+<li><p>type <code>kpm restore -s https://www.myget.org/F/aspnetvnext/</code>
 The K Package Manager will head off to the nuget repository and fetch <code>System.Console</code> and all it's dependencies, based on the entry in your project.json file. Note that there is no need to use Nuget to install this package. The project.json entry is all the info kpm needs to fetch your dependencies.</p></li>
 </ul>
 
