@@ -4,7 +4,7 @@
   <title><![CDATA[dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-27T23:55:16+08:00</updated>
+  <updated>2014-05-27T23:56:21+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -44,12 +44,19 @@
 <li>Install Mono as per the instructions at <a href="https://github.com/mono/mono">The Mono Github page</a>.</li>
 <li>You will need an earlier mono release installed in order to build Mono from source (Mono uses Mono to build itself)</li>
 <li>You will need autoconf, libtool and and a few oher common dev tools installed on your system.</li>
-<li>On some linux systems you may need to run
-<code>
-sudo certmgr -ssl -m https://go.microsoft.com
-sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
-sudo certmgr -ssl -m https://nuget.org
-</code></li>
+<li>On some linux systems you may need to run</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> sudo certmgr -ssl -m https://go.microsoft.com
+</span><span class='line'> sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
+</span><span class='line'> sudo certmgr -ssl -m https://nuget.org</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>If you are on linux, you will need to run <code>mozroots --import --sync</code> after installing mono to avoid certificate/trust issues down the line</li>
 <li>If you are on OSX you will want to edit /private/etc/paths and move the line <code>/usr/local/bin</code> before the line <code>/usr/bin</code> so the system finds the new mono version on the path before the old one.</li>
 </ul>
