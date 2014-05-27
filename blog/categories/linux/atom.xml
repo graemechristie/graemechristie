@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-27T23:54:03+08:00</updated>
+  <updated>2014-05-27T23:55:16+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -56,9 +56,6 @@ sudo certmgr -ssl -m https://nuget.org
 
 
 <p> <em>caveat: This may totally break your system if you have lots of crazy stuff in /usr/local/bin. If your not sure about this, wait for a supported official release of Mono</em></p>
-
-<p> <strong>Update: It appears on some linux systems you may need to run </strong>
- ```</p>
 
 <p>Once all this is done, run <code>mono --version</code>. You should see that you are running Mono version 3.4.1 or newer.</p>
 
