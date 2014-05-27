@@ -36,8 +36,6 @@ I don't want to go into too much detail here. There are plenty of [guides around
 
  _caveat: This may totally break your system if you have lots of crazy stuff in /usr/local/bin. If your not sure about this, wait for a supported official release of Mono_
 
- ** Update: As suggested in the comments if your worried about messing with your path the better solution here would be to add --prefix=/opt/mono when running autogen.sh for the mono build and then add /opt/mono/bin to your path**
-
 Once all this is done, run `mono --version`. You should see that you are running Mono version 3.4.1 or newer.
 
 ![mono --version](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/36968/482094/fPMtOGUiN1vyLzx/upload.png)  
