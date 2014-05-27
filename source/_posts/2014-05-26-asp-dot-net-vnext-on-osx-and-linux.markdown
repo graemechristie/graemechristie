@@ -42,10 +42,6 @@ I don't want to go into too much detail here. There are plenty of [guides around
 
  _caveat: This may totally break your system if you have lots of crazy stuff in /usr/local/bin. If your not sure about this, wait for a supported official release of Mono_
 
- **Update: It appears on some linux systems you may need to run **
- ```
-
-
 Once all this is done, run `mono --version`. You should see that you are running Mono version 3.4.1 or newer.
 
 ![mono --version](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/36968/482094/fPMtOGUiN1vyLzx/upload.png)  
