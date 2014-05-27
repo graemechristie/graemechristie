@@ -114,3 +114,5 @@ So let's point it at something. We could download one of the many samples from t
 ### In Summary
 
 Hopefully this post has demonstrated that cross platform ASP.NET vNext functionality is available now. There are still rought edges, but progress is being made daily and first class support for OSX and Linux environments is on the Horizon. If you are having issues getting this working, feel free to drop into the [aspnetvnext room on Jabbr](https://jabbr.net/#/rooms/AspNetvNext) and someone should be able to help you out.
+
+UPDATE: If you'd like to try something more involved than the trivial console application above, the simple [Hello World V Next](https://github.com/davidfowl/HelloWorldVNext) web example might be a good next step. 
