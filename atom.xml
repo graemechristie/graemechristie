@@ -4,7 +4,7 @@
   <title><![CDATA[dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-27T23:57:32+08:00</updated>
+  <updated>2014-05-28T00:00:07+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -177,7 +177,7 @@ The K Package Manager will head off to the nuget repository and fetch <code>Syst
 
 <h3>In Summary</h3>
 
-<p>Hopefully this post has demonstrated that cross platform ASP.NET vNext functionality is available now. There are still rough edges, but progress is being made daily and first class support for OSX and Linux environments is on the Horizon. If you are having issues getting this working, feel free to drop into the <a href="https://jabbr.net/#/rooms/AspNetvNext">aspnetvnext room on Jabbr</a> and someone should be able to help you out.</p>
+<p>Hopefully this post has demonstrated that cross platform ASP.NET vNext functionality is available now. There are still rough edges, but progress is being made daily and first class support for OSX and Linux environments is on the horizon. If you are having issues getting this working, feel free to drop into the <a href="https://jabbr.net/#/rooms/AspNetvNext">aspnetvnext room on Jabbr</a> and someone should be able to help you out.</p>
 
 <p><strong>UPDATE: If you&#8217;d like to try something more involved than the trivial console application above, the simple <a href="https://github.com/davidfowl/HelloWorldVNext">Hello World V Next</a> web example might be a good next step.</strong></p>
 ]]></content>
