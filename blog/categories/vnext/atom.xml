@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vNext | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/vnext/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-28T00:00:07+08:00</updated>
+  <updated>2014-05-31T11:44:33+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -43,7 +43,7 @@
 <ul>
 <li>Install Mono as per the instructions at <a href="https://github.com/mono/mono">The Mono Github page</a>.</li>
 <li>You will need an earlier mono release installed in order to build Mono from source (Mono uses Mono to build itself)</li>
-<li>You will need autoconf, libtool and and a few oher common dev tools installed on your system.</li>
+<li>You will need autoconf, libtool and and a few other common dev tools installed on your system.</li>
 <li>On some linux systems you may need to run the following before you run the mozroots command below.
 <code>
 sudo certmgr -ssl -m https://go.microsoft.com
