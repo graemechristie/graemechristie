@@ -30,7 +30,7 @@ I don't want to go into too much detail here. There are plenty of [guides around
 
 * Install Mono as per the instructions at [The Mono Github page](https://github.com/mono/mono).
 * You will need an earlier mono release installed in order to build Mono from source (Mono uses Mono to build itself)
-* You will need autoconf, libtool and and a few oher common dev tools installed on your system.
+* You will need autoconf, libtool and and a few other common dev tools installed on your system.
 * On some linux systems you may need to run the following before you run the mozroots command below.
 ```
  sudo certmgr -ssl -m https://go.microsoft.com
