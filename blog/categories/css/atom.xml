@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-05-31T11:44:33+08:00</updated>
+  <updated>2014-06-05T16:20:34+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -20,7 +20,7 @@
     <id>http://graemechristie.github.com/graemechristie/blog/2013/07/03/elastic-grids</id>
     <content type="html"><![CDATA[<h3>Grid Systems</h3>
 
-<p>Modern Web design has gravitated away from using tables for layout (as they are semantically incorrect, inflexible and lead to bloated hard to manage layout) and towards CSS based layouts. CSS grid systems simplify the application of CSS layouts. Popular grid systems such as the <a href="http://960.gs">960 Grid System</a> or <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> are great for content centric systems like CMS systems or Web Portals, but are not ideal for line of business applications. Primarily, they lack the ability to define areas for content that stretch to use all of the available screen real estate, along side areas that have fixed width's or heights. The up and coming <a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexible Box Layout Module</a> is looking to address this, but it is <a href="http://caniuse.com/flexbox">likely to be years</a> before this is usable in most main stream browsers. In the mean time, I have attempted to address this concern with the <em>Elastic Grid System</em>.</p>
+<p>Modern Web design has gravitated away from using tables for layout (as they are semantically incorrect, inflexible and lead to bloated hard to manage layout) and towards CSS based layouts. CSS grid systems simplify the application of CSS layouts. Popular grid systems such as the <a href="http://960.gs">960 Grid System</a> or <a href="http://twitter.github.io/bootstrap/">Twitter Bootstrap</a> are great for content centric systems like CMS systems or Web Portals, but are not ideal for line of business applications. Primarily, they lack the ability to define areas for content that stretch to use all of the available screen real estate, along side areas that have fixed width&rsquo;s or heights. The up and coming <a href="http://www.w3.org/TR/css3-flexbox/">CSS Flexible Box Layout Module</a> is looking to address this, but it is <a href="http://caniuse.com/flexbox">likely to be years</a> before this is usable in most main stream browsers. In the mean time, I have attempted to address this concern with the <em>Elastic Grid System</em>.</p>
 
 <h4>The Elastic Grid system</h4>
 
@@ -56,57 +56,52 @@
 
 <p>```html</p>
 
-<div class="container-elastic">
-    <div class="row top-1 stretch-to-bottom-2">
-        <!-- We don't have to use div's for our layout. -->
-        <!-- Fieldsets are often a good choice when you want an -->
-        <!-- area with a title (legend) -->
-        <fieldset class="column left-1 stretch-to-right-7">
-            <legend>Variable width and height thing !</legend>
-            <!-- Variable width and height content in here. It is likely -->
-            <!-- you will want to make this scrollable -->
-        </fieldset>
+<p><div class="container-elastic"></p>
 
-        <fieldset class="column right-1 span-6">
-            <div class="container-elastic nested">
-                <div class="row top-1 stretch-to-bottom-2">
-                    <div class="scroll-pane">
-                        <!-- Scrollable content in here. -->
->
-                        <!-- As our parent container is a fixed width anyway -->
-                        <!-- we don't really need to define any columns if we don't want to -->
-                        <!-- Typically we would use a fluid grid in here to --> 
-                        <!-- lay our content out inside our fixed width parent container -->
-                    </div>
-                    <div class="row bottom-1">
-                        <div class="column left-1 stretch-to-right-1">
-                            <!-- Buttons in here ! -->
-                        <div>
-                    </div>
-                </div>
-            </div>          
-        </fieldset>
-    </div>
-    <div class="row bottom-1">
-        <div class="column left-1 stretch-to-right-1">
-            <!-- Buttons in here ! -->
-        <div>
-    </div>
-</div>
-```
+<pre><code>&lt;div class="row top-1 stretch-to-bottom-2"&gt;
+    &lt;!-- We don't have to use div's for our layout. --&gt;
+    &lt;!-- Fieldsets are often a good choice when you want an --&gt;
+    &lt;!-- area with a title (legend) --&gt;
+    &lt;fieldset class="column left-1 stretch-to-right-7"&gt;
+        &lt;legend&gt;Variable width and height thing !&lt;/legend&gt;
+        &lt;!-- Variable width and height content in here. It is likely --&gt;
+        &lt;!-- you will want to make this scrollable --&gt;
+    &lt;/fieldset&gt;
 
-Click [here](elastic-example/index.html) to see an actual working example of an elastic layout.
+    &lt;fieldset class="column right-1 span-6"&gt;
+        &lt;div class="container-elastic nested"&gt;
+            &lt;div class="row top-1 stretch-to-bottom-2"&gt;
+                &lt;div class="scroll-pane"&gt;
+                    &lt;!-- Scrollable content in here. --&gt;
+</code></pre>
 
-In my next blog post, I will go over the CSS code, and show how we generate it using less. 
+<blockquote><pre><code>                    &lt;!-- As our parent container is a fixed width anyway --&gt;
+                    &lt;!-- we don't really need to define any columns if we don't want to --&gt;
+                    &lt;!-- Typically we would use a fluid grid in here to --&gt; 
+                    &lt;!-- lay our content out inside our fixed width parent container --&gt;
+                &lt;/div&gt;
+                &lt;div class="row bottom-1"&gt;
+                    &lt;div class="column left-1 stretch-to-right-1"&gt;
+                        &lt;!-- Buttons in here ! --&gt;
+                    &lt;div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;          
+    &lt;/fieldset&gt;
+&lt;/div&gt;
+&lt;div class="row bottom-1"&gt;
+    &lt;div class="column left-1 stretch-to-right-1"&gt;
+        &lt;!-- Buttons in here ! --&gt;
+    &lt;div&gt;
+&lt;/div&gt;
+</code></pre>
 
+<p></div>
+```</p></blockquote>
 
+<p>Click <a href="elastic-example/index.html">here</a> to see an actual working example of an elastic layout.</p>
 
-
-
-
-
-  
-
+<p>In my next blog post, I will go over the CSS code, and show how we generate it using less.</p>
 ]]></content>
   </entry>
   
