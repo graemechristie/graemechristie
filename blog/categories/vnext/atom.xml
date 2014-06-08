@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vNext | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/vnext/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-06-05T17:37:39+08:00</updated>
+  <updated>2014-06-08T16:53:06+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -65,12 +65,12 @@ sudo certmgr -ssl -m https://nuget.org
 
 <h3>Installing KVM and the K Runtime Environment</h3>
 
-<p>Installing KVM is super simple. If you like you can go to the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation#osxlinux">Readme for the AspNet Home project</a> and follow the &ldquo;Getting Started&rdquo; instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.</p>
+<p>Installing KVM is super simple. If you like you can go to the <a href="https://github.com/aspnet/Home#osxlinux">Readme for the AspNet Home project</a> and follow the &ldquo;Getting Started&rdquo; instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.</p>
 
 <p>KVM can be installed on any Linux or OSX system (that has bash or zsh and curl installed) with a single line.</p>
 
 <p><code>
-curl https://raw.githubusercontent.com/graemechristie/Home/KvmShellImplementation/kvmsetup.sh | sh &amp;&amp; source ~/.kre/kvm/kvm.sh &amp;&amp; kvm upgrade
+curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh &amp;&amp; source ~/.kre/kvm/kvm.sh &amp;&amp; kvm upgrade
 </code></p>
 
 <p>This will:</p>
@@ -85,7 +85,7 @@ curl https://raw.githubusercontent.com/graemechristie/Home/KvmShellImplementatio
 
 <p>Once this is done, all of the KRE commands will be available from shell prompt. Primarily this will be the <code>k</code> command used to run ASP.NET vNext Projects, and the <code>kpm</code> command used to restore packages.</p>
 
-<p>Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the <a href="https://github.com/graemechristie/Home/tree/KvmShellImplementation#running-the-samples">ASP.NET Home Project Readme</a> for examples of the various <code>kvm</code> commands.</p>
+<p>Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the <a href="https://github.com/aspnet/Home#running-the-samples">ASP.NET Home Project Readme</a> for examples of the various <code>kvm</code> commands.</p>
 
 <h3>Okay, so I&rsquo;ve got a Shiny New KRE &hellip;.</h3>
 
