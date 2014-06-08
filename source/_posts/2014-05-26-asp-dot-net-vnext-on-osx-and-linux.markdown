@@ -50,12 +50,12 @@ If you do not, check your `$PATH` variable and go back over the mono install ste
 
 ### Installing KVM and the K Runtime Environment
 
-Installing KVM is super simple. If you like you can go to the [Readme for the AspNet Home project](https://github.com/graemechristie/Home/tree/KvmShellImplementation#osxlinux) and follow the "Getting Started" instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.
+Installing KVM is super simple. If you like you can go to the [Readme for the AspNet Home project](https://github.com/aspnet/Home#osxlinux) and follow the "Getting Started" instructions there, however that involves cloning the Home Repository which is only required for that quick start demo.
 
 KVM can be installed on any Linux or OSX system (that has bash or zsh and curl installed) with a single line.
 
 ```
-curl https://raw.githubusercontent.com/graemechristie/Home/KvmShellImplementation/kvmsetup.sh | sh && source ~/.kre/kvm/kvm.sh && kvm upgrade
+curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh && kvm upgrade
 ```
 
 This will:
@@ -67,7 +67,7 @@ This will:
 
 Once this is done, all of the KRE commands will be available from shell prompt. Primarily this will be the `k` command used to run ASP.NET vNext Projects, and the `kpm` command used to restore packages.
 
-Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the [ASP.NET Home Project Readme](https://github.com/graemechristie/Home/tree/KvmShellImplementation#running-the-samples) for examples of the various `kvm` commands.
+Additionally the kvm command can be used to install other version of KRE side by side for the user, switch between versions, list the installed versions and set up aliases. See the [ASP.NET Home Project Readme](https://github.com/aspnet/Home#running-the-samples) for examples of the various `kvm` commands.
 
 ### Okay, so I've got a Shiny New KRE ....
 
