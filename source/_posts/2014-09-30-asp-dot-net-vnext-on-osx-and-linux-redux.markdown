@@ -37,7 +37,7 @@ sudo apt-get update
 sudo apt-get install mono-devel
 ```
 
-* We will need to install some certificates on linux, to avoid getting exception when downloading packages with nuget package restore. This is not known ot be an issue on OSX.
+* We will need to install some certificates on linux, to avoid an getting exception when downloading packages with nuget package restore. This is not required on OSX.
 ```
  sudo certmgr -ssl -m https://go.microsoft.com
  sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
@@ -53,7 +53,7 @@ sudo apt-get install mono-devel
     ![Mono Version](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/CwcEnLnN2p3lZnh/upload.png)
 
 
-If not, you probably still have an old version of Mono on your path. This will quite likely be the case if you had previoulsy installed mono from source (as per my previous blog post). You will want to make sure you remove your old installation. Running `make clean` from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.
+If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed mono from source (as per my previous blog post). You will want to make sure you remove your old installation. Running `make clean` from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.
 
 ### Install KVM and the K Runtime
 
@@ -111,7 +111,13 @@ cd src/helloworldweb
 ```
 k web
 ```
-* Open a browser and go to http://localhost:5000
+* Open a browser and go to http://localhost:5000. If everything is in order, you will see "Hello World" staring back at you ....
+
+    ![Hello World](https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_cf58.png)
+
+Great Success !
+ 
+
 
 
 
