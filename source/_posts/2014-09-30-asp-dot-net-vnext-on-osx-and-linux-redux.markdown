@@ -61,12 +61,12 @@ If not, you probably still have an old version of Mono on your path. This might 
 ```
 sudo apt-get install curl
 ```
-* If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I'm not going to paste the commands here, for fear of people nuking thier home directories accidentally and blaming me .. but effectively you just want to remove the `~/.kre` folder from you home directory, and start a new shell.
+_If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I'm not going to paste the commands here, for fear of people nuking thier home directories accidentally and blaming me .. but effectively you just want to remove the `~/.kre` folder from your home directory, and start a new shell._
 
 
-* Bootstrap your KVM installation by downloading and running the kvm install script from the asp.net/Home respository.
+* Bootstrap your KVM installation by downloading and running the kvm install script from the asp.net/Home respository. We are using the `dev` branch here, which will download a kvm that is pointing at the feed for the latest beta packages. 
 ```
-curl https://raw.githubusercontent.com/aspnet/Home/master/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh
+curl https://raw.githubusercontent.com/aspnet/Home/dev/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh
 ```
 * Install the latest K Runtime
 ```
