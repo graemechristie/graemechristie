@@ -4,7 +4,7 @@
   <title><![CDATA[Category: OSX | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/osx/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-10-07T23:20:11+08:00</updated>
+  <updated>2014-10-07T23:23:43+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -37,7 +37,7 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 <ul>
 <li>Add the Xamarin GPG key to apt
 <code>
-wget http://download.mono-project.com/repo/xamarin.gpg &amp;&amp; sudo apt-key add xamarin.gpg`
+wget http://download.mono-project.com/repo/xamarin.gpg &amp;&amp; sudo apt-key add xamarin.gpg
 </code></li>
 <li>Add the Xamarin repository to apt
 <code>
