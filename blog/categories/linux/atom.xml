@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-06-08T16:53:06+08:00</updated>
+  <updated>2014-10-07T22:46:31+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -12,6 +12,136 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[ASP.NET vNext on OSX and Linux Redux]]></title>
+    <link href="http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/"/>
+    <updated>2014-09-30T22:13:57+08:00</updated>
+    <id>http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux</id>
+    <content type="html"><![CDATA[<p>Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
+so I thought I&rsquo;d do a quick update on how to get up and running on Linux and OSX.</p>
+
+<h3>Install Mono</h3>
+
+<p>Xamarin now maintains mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found <a href="http://www.mono-project.com/docs/getting-started/install/linux/.">http://www.mono-project.com/docs/getting-started/install/linux/.</a></p>
+
+<h5>OSX</h5>
+
+<ul>
+<li>Simply download the Mono MDK from <a href="http://www.mono-project.com/download/#download-mac">http://www.mono-project.com/download/#download-mac</a> and run the installer.</li>
+</ul>
+
+
+<h5>Ubuntu 14.04</h5>
+
+<ul>
+<li>Add the Xamarin GPG key to apt
+<code>
+wget http://download.mono-project.com/repo/xamarin.gpg &amp;&amp; sudo apt-key add xamarin.gpg`
+</code></li>
+<li>Add the Xamarin repository to apt
+<code>
+sudo sh -c 'echo "deb http://download.mono-project.com/repo/debian wheezy main" &gt; /etc/apt/sources.list.d/mono-xamarin.list'
+</code></li>
+<li>Update your package cache
+<code>
+sudo apt-get update
+</code></li>
+<li><p>Install the mono development package
+<code>
+sudo apt-get install mono-devel
+</code></p></li>
+<li><p>We will need to install some certificates on linux, to avoid an getting exception when downloading packages with nuget package restore. This is not required on OSX.
+<code>
+sudo certmgr -ssl -m https://go.microsoft.com
+sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
+sudo certmgr -ssl -m https://nuget.org
+mozroots --import --sync
+</code></p></li>
+</ul>
+
+
+<h5>Check Your Mono Installation</h5>
+
+<ul>
+<li><p>Open a new shell and type <code>mono --version</code>. You should be running mono version 3.8.0 or newer.</p>
+
+<p>  <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/CwcEnLnN2p3lZnh/upload.png" alt="Mono Version" /></p></li>
+</ul>
+
+
+<p>If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running <code>make clean</code> from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.</p>
+
+<h3>Install KVM and the K Runtime</h3>
+
+<ul>
+<li><p>If your on Linux, you may need to install curl.
+<code>
+sudo apt-get install curl
+</code>
+<em>If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I&rsquo;m not going to paste the commands here, for fear of people nuking thier LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the <code>~/.kre</code> folder from your home directory, and start a new shell.</em></p></li>
+<li><p>Bootstrap your KVM installation by downloading and running the kvm install script from the <a href="https://github.com/aspnet/Home">aspnet/Home</a> respository. We are using the <code>dev</code> branch here, which will download a kvm that is pointing at the feed for the latest beta packages. At the time of writing the master branch is still pointing at the alpha CTP.
+<code>
+curl https://raw.githubusercontent.com/aspnet/Home/dev/kvminstall.sh | sh &amp;&amp; source ~/.kre/kvm/kvm.sh
+</code></p></li>
+<li>Install the latest K Runtime
+<code>
+kvm upgrade
+</code></li>
+<li><p>Verify the latest install
+<code>
+kvm list
+k --version
+</code></p>
+
+<p>  <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png" alt="KVM installed" /></p></li>
+</ul>
+
+
+<p>You should now have one of the latest betas installed. The active version from <code>kvm list</code> should reflect the actual version of kre that you see when you run <code>k --version</code>.</p>
+
+<h3>Try out the Hello World vNext Demo from David Fowlers github repository</h3>
+
+<p>David fowler has created a Demo app for OSX and linux, and put it up in his <a href="https://github.com/davidfowl/HelloWorldVNext">personal repository on GitHub</a>. To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.</p>
+
+<ul>
+<li>First, install &ldquo;git&rdquo; if you don&rsquo;t already have it. OSX users can get it from <a href="http://git-scm.com/download/mac">git-scm.com</a>, or on Ubuntu
+<code>
+sudo apt-get-install git
+</code></li>
+<li>Clone the HelloWorldVNext repository
+<code>
+git clone https://github.com/davidfowl/HelloWorldVNext.git
+</code></li>
+<li>Navigate into the HelloWorldVNext directory
+<code>
+git clone https://github.com/davidfowl/HelloWorldVNext.git
+</code></li>
+<li>Restore Packages
+<code>
+kpm restore
+</code></li>
+<li>Navigate to the src/helloworldweb directory
+<code>
+cd src/helloworldweb
+</code></li>
+<li>Run the web application
+<code>
+k web
+</code></li>
+<li><p>Open a browser and go to <a href="http://localhost:5000.">http://localhost:5000.</a> If everything is in order, you will see &ldquo;Hello World&rdquo; staring back at you &hellip;.</p>
+
+<p><img src="https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_cf58.png" alt="Great Success" /></p></li>
+</ul>
+
+
+<h3>Final Notes</h3>
+
+<p>The steps above are the bare minumum to get you up and running with vNext on Linux or OSX. The project is still (only barely) in beta, and is not ready the prime time yet. That being said, the ASP.NET vNext team at Microsoft have shown a huge commitment to cross platform support for the next iteration of ASP.NET. ASP.NET, running in production, on Linux, fully supported by Microsoft, <strong>will be a thing</strong>, and probably within the next twelve months. The time to get in there, get your hands dirty and kick the tires is now .. while the devs are ready and able to respond to your feedback.</p>
+
+<p>If you have any problems or feedback, or just want to hang around and see what&rsquo;s going on, jump into the ASP.NET vNext chat channel at <a href="https://jabbr.net/#/rooms/AspNetvNext,">https://jabbr.net/#/rooms/AspNetvNext,</a> there is almost always someone around.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[ASP.NET vNext on OSX and Linux]]></title>

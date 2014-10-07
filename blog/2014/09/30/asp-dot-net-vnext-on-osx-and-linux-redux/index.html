@@ -1,0 +1,479 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>ASP.NET vNext on OSX and Linux Redux - dev/null</title>
+  <meta name="author" content="Graeme Christie">
+
+  
+  <meta name="description" content="Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux">
+  <link href="/graemechristie/favicon.png" rel="icon">
+  <link href="/graemechristie/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/graemechristie/atom.xml" rel="alternate" title="dev/null" type="application/atom+xml">
+  <script src="/graemechristie/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/graemechristie/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-51367947-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/graemechristie/">dev/null</a></h1>
+  
+    <h2>The Developer Blog of Graeme Christie</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/graemechristie/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:graemechristie.github.com/graemechristie" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/graemechristie/">Blog</a></li>
+  <li><a href="/graemechristie/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">ASP.NET vNext on OSX and Linux Redux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-30T22:13:57+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://graemechristie.github.com/graemechristie">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
+so I thought I&rsquo;d do a quick update on how to get up and running on Linux and OSX.</p>
+
+<h3>Install Mono</h3>
+
+<p>Xamarin now maintains mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found <a href="http://www.mono-project.com/docs/getting-started/install/linux/.">http://www.mono-project.com/docs/getting-started/install/linux/.</a></p>
+
+<h5>OSX</h5>
+
+<ul>
+<li>Simply download the Mono MDK from <a href="http://www.mono-project.com/download/#download-mac">http://www.mono-project.com/download/#download-mac</a> and run the installer.</li>
+</ul>
+
+
+<h5>Ubuntu 14.04</h5>
+
+<ul>
+<li>Add the Xamarin GPG key to apt</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget http://download.mono-project.com/repo/xamarin.gpg && sudo apt-key add xamarin.gpg`</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Add the Xamarin repository to apt</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo sh -c 'echo "deb http://download.mono-project.com/repo/debian wheezy main" &gt; /etc/apt/sources.list.d/mono-xamarin.list'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Update your package cache</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install the mono development package</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install mono-devel</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>We will need to install some certificates on linux, to avoid an getting exception when downloading packages with nuget package restore. This is not required on OSX.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> sudo certmgr -ssl -m https://go.microsoft.com
+</span><span class='line'> sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
+</span><span class='line'> sudo certmgr -ssl -m https://nuget.org
+</span><span class='line'> mozroots --import --sync</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Check Your Mono Installation</h5>
+
+<ul>
+<li><p>Open a new shell and type <code>mono --version</code>. You should be running mono version 3.8.0 or newer.</p>
+
+<p>  <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/CwcEnLnN2p3lZnh/upload.png" alt="Mono Version" /></p></li>
+</ul>
+
+
+<p>If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running <code>make clean</code> from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.</p>
+
+<h3>Install KVM and the K Runtime</h3>
+
+<ul>
+<li>If your on Linux, you may need to install curl.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install curl</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I&rsquo;m not going to paste the commands here, for fear of people nuking thier LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the <code>~/.kre</code> folder from your home directory, and start a new shell.</em></p>
+
+<ul>
+<li>Bootstrap your KVM installation by downloading and running the kvm install script from the <a href="https://github.com/aspnet/Home">aspnet/Home</a> respository. We are using the <code>dev</code> branch here, which will download a kvm that is pointing at the feed for the latest beta packages. At the time of writing the master branch is still pointing at the alpha CTP.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>curl https://raw.githubusercontent.com/aspnet/Home/dev/kvminstall.sh | sh && source ~/.kre/kvm/kvm.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Install the latest K Runtime</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kvm upgrade</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Verify the latest install</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kvm list
+</span><span class='line'>k --version</span></code></pre></td></tr></table></div></figure>
+
+
+<pre><code>![KVM installed](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png)
+</code></pre>
+
+<p>You should now have one of the latest betas installed. The active version from <code>kvm list</code> should reflect the actual version of kre that you see when you run <code>k --version</code>.</p>
+
+<h3>Try out the Hello World vNext Demo from David Fowlers github repository</h3>
+
+<p>David fowler has created a Demo app for OSX and linux, and put it up in his <a href="https://github.com/davidfowl/HelloWorldVNext">personal repository on GitHub</a>. To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.</p>
+
+<ul>
+<li>First, install &ldquo;git&rdquo; if you don&rsquo;t already have it. OSX users can get it from <a href="http://git-scm.com/download/mac">git-scm.com</a>, or on Ubuntu</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get-install git</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Clone the HelloWorldVNext repository</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/davidfowl/HelloWorldVNext.git</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Navigate into the HelloWorldVNext directory</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/davidfowl/HelloWorldVNext.git</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Restore Packages</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kpm restore</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Navigate to the src/helloworldweb directory</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd src/helloworldweb</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Run the web application</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>k web</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Open a browser and go to <a href="http://localhost:5000.">http://localhost:5000.</a> If everything is in order, you will see &ldquo;Hello World&rdquo; staring back at you &hellip;.</p>
+
+<p><img src="https://jabbrlive.blob.core.windows.net/jabbr-uploads/clipboard_cf58.png" alt="Great Success" /></p></li>
+</ul>
+
+
+<h3>Final Notes</h3>
+
+<p>The steps above are the bare minumum to get you up and running with vNext on Linux or OSX. The project is still (only barely) in beta, and is not ready the prime time yet. That being said, the ASP.NET vNext team at Microsoft have shown a huge commitment to cross platform support for the next iteration of ASP.NET. ASP.NET, running in production, on Linux, fully supported by Microsoft, <strong>will be a thing</strong>, and probably within the next twelve months. The time to get in there, get your hands dirty and kick the tires is now .. while the devs are ready and able to respond to your feedback.</p>
+
+<p>If you have any problems or feedback, or just want to hang around and see what&rsquo;s going on, jump into the ASP.NET vNext chat channel at <a href="https://jabbr.net/#/rooms/AspNetvNext,">https://jabbr.net/#/rooms/AspNetvNext,</a> there is almost always someone around.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Graeme Christie</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-09-30T22:13:57+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/graemechristie/blog/categories/aspnet/'>ASPNet</a>, <a class='category' href='/graemechristie/blog/categories/linux/'>Linux</a>, <a class='category' href='/graemechristie/blog/categories/osx/'>OSX</a>, <a class='category' href='/graemechristie/blog/categories/vnext/'>vNext</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/" data-via="graeme_christie" data-counturl="http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/" title="Previous Post: ASP.NET vNext on OSX and Linux">&laquo; ASP.NET vNext on OSX and Linux</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+<p>My name is Graeme Christie.</p>
+<p>I live in Perth, Western Australia and I'm a Senior Developer at Readify.</p>
+<p>I am doting father, avid boardgamer and long time geek. I am passionate about technology, software development and all things .NET.</p>
+
+<img src="https://university.xamarin.com/images/badges/Mobile-medium.png" style="float: left; width: 100px;margin-right:10px"/>
+<p>I have also recently become a <a href="https://university.xamarin.com/certification">Xamarin Certified Mobile Developer</a></p>
+<div style="clear:both"/>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/">ASP.NET vNext on OSX and Linux Redux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/graemechristie/blog/2014/05/26/asp-dot-net-vnext-on-osx-and-linux/">ASP.NET vNext on OSX and Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/graemechristie/blog/2013/07/03/elastic-grids/">Elastic Grids</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/graemechristie">@graemechristie</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'graemechristie',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/graemechristie/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Graeme Christie -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'graemechristiesblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/';
+        var disqus_url = 'http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
