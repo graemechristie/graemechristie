@@ -4,7 +4,7 @@
   <title><![CDATA[dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-10-07T23:02:00+08:00</updated>
+  <updated>2014-10-07T23:20:11+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -18,12 +18,12 @@
     <link href="http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux/"/>
     <updated>2014-09-30T22:13:57+08:00</updated>
     <id>http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux</id>
-    <content type="html"><![CDATA[<p>Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
+    <content type="html"><![CDATA[<p>Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight forward,
 so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and Linux.</p>
 
 <h3>Install Mono</h3>
 
-<p>Xamarin now maintains mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found <a href="http://www.mono-project.com/docs/getting-started/install/linux/.">http://www.mono-project.com/docs/getting-started/install/linux/.</a></p>
+<p>Xamarin now maintains Mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting Mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found <a href="http://www.mono-project.com/docs/getting-started/install/linux/.">http://www.mono-project.com/docs/getting-started/install/linux/.</a></p>
 
 <h5>OSX</h5>
 
@@ -62,7 +62,7 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 
 
 <ul>
-<li>Install the mono development package</li>
+<li>Install the Mono development package</li>
 </ul>
 
 
@@ -71,7 +71,7 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 
 
 <ul>
-<li>We will need to install some certificates on linux, to avoid an getting exception when downloading packages with nuget package restore. This is not required on OSX.</li>
+<li>We will need to install some certificates on Linux, to avoid getting an exception when downloading packages with nuget package restore. This is not required on OSX.</li>
 </ul>
 
 
@@ -88,13 +88,13 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 <h5>Check Your Mono Installation</h5>
 
 <ul>
-<li><p>Open a new shell and type <code>mono --version</code>. You should be running mono version 3.8.0 or newer.</p>
+<li><p>Open a new shell and type <code>mono --version</code>. You should be running Mono version 3.8.0 or newer.</p>
 
 <p>  <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/CwcEnLnN2p3lZnh/upload.png" alt="Mono Version" /></p></li>
 </ul>
 
 
-<p>If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running <code>make clean</code> from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.</p>
+<p>If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running <code>make clean</code> from the Mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.</p>
 
 <h3>Install KVM and the K Runtime</h3>
 
@@ -107,7 +107,7 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install curl</span></code></pre></td></tr></table></div></figure>
 
 
-<p><em>If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I&rsquo;m not going to paste the commands here, for fear of people nuking thier LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the <code>~/.kre</code> folder from your home directory, and start a new shell.</em></p>
+<p><em>If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I&rsquo;m not going to paste the commands here, for fear of people nuking their LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the <code>~/.kre</code> folder from your home directory, and start a new shell.</em></p>
 
 <ul>
 <li>Bootstrap your KVM installation by downloading and running the kvm install script from the <a href="https://github.com/aspnet/Home">aspnet/Home</a> respository. We are using the <code>dev</code> branch here, which will download a kvm that is pointing at the feed for the latest beta packages. At the time of writing the master branch is still pointing at the alpha CTP.</li>
@@ -142,9 +142,9 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 
 <p>You should now have one of the latest betas installed. The active version from <code>kvm list</code> should reflect the actual version of kre that you see when you run <code>k --version</code>.</p>
 
-<h3>Try out the Hello World vNext Demo from David Fowlers github repository</h3>
+<h3>Try out the Hello World vNext Demo from David Fowler&rsquo;s github repository</h3>
 
-<p>David fowler has created a Demo app for OSX and linux, and put it up in his <a href="https://github.com/davidfowl/HelloWorldVNext">personal repository on GitHub</a>. To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.</p>
+<p>David Fowler has created a Demo app for OSX and Linux, and put it up in his <a href="https://github.com/davidfowl/HelloWorldVNext">personal repository on GitHub</a>. To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.</p>
 
 <ul>
 <li>First, install &ldquo;git&rdquo; if you don&rsquo;t already have it. OSX users can get it from <a href="http://git-scm.com/download/mac">git-scm.com</a>, or on Ubuntu</li>
@@ -170,7 +170,7 @@ so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and 
 
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone https://github.com/davidfowl/HelloWorldVNext.git</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd HelloWorldVNext</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
