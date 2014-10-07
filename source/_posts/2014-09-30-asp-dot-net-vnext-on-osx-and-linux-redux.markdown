@@ -6,12 +6,12 @@ comments: true
 categories: ASPNet vNext OSX Linux
 ---
 
-Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
+Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight forward,
 so I thought I'd do a quick update on installing ASP.NET vNext on OSX and Linux.
 
 ### Install Mono
 
-Xamarin now maintains mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found http://www.mono-project.com/docs/getting-started/install/linux/.
+Xamarin now maintains Mono packages for OSX and most common Linux distributions, and are committed to a regular release schedule, so getting Mono up and running is now a much simpler affair. Currently, there are supported packages for Mono. Installation is generally as simple as adding the Xamarin repository to your packages sources, and importing their GPG key) and then installing. I am going to cover OSX and Ubuntu 14.04 here, but easy instructions for most distros can be found http://www.mono-project.com/docs/getting-started/install/linux/.
 
 ##### OSX
 
@@ -32,12 +32,12 @@ sudo sh -c 'echo "deb http://download.mono-project.com/repo/debian wheezy main" 
 ```
 sudo apt-get update
 ```
-* Install the mono development package
+* Install the Mono development package
 ```
 sudo apt-get install mono-devel
 ```
 
-* We will need to install some certificates on linux, to avoid an getting exception when downloading packages with nuget package restore. This is not required on OSX.
+* We will need to install some certificates on Linux, to avoid getting an exception when downloading packages with nuget package restore. This is not required on OSX.
 ```
  sudo certmgr -ssl -m https://go.microsoft.com
  sudo certmgr -ssl -m https://nugetgallery.blob.core.windows.net
@@ -48,12 +48,12 @@ sudo apt-get install mono-devel
 
 ##### Check Your Mono Installation
 
-* Open a new shell and type `mono --version`. You should be running mono version 3.8.0 or newer.
+* Open a new shell and type `mono --version`. You should be running Mono version 3.8.0 or newer.
 
     ![Mono Version](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/CwcEnLnN2p3lZnh/upload.png)
 
 
-If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running `make clean` from the mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.
+If not, you probably still have an old version of Mono on your path. This might be the case if you had previously installed Mono from source (as per my last blog post). You will want to make sure you remove your old installation. Running `make clean` from the Mono source code folder is probably the best way to do this. Additionally, remove any other installation that may have been installed via a third party package manager such as homebrew on OSX.
 
 ### Install KVM and the K Runtime
 
@@ -61,7 +61,7 @@ If not, you probably still have an old version of Mono on your path. This might 
 ```
 sudo apt-get install curl
 ```
-_If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I'm not going to paste the commands here, for fear of people nuking thier LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the `~/.kre` folder from your home directory, and start a new shell._
+_If you have any old (alpha) versions of kre installed, I recommend removing them from your system and starting fresh, and then starting a new shell. This will avoid any package sources being carried over in environment variables. I'm not going to paste the commands here, for fear of people nuking their LOLcats image collection accidentally and blaming me .. but effectively you just want to remove the `~/.kre` folder from your home directory, and start a new shell._
 
 * Bootstrap your KVM installation by downloading and running the kvm install script from the [aspnet/Home](https://github.com/aspnet/Home) respository. We are using the `dev` branch here, which will download a kvm that is pointing at the feed for the latest beta packages. At the time of writing the master branch is still pointing at the alpha CTP.
 ```
@@ -81,9 +81,9 @@ k --version
 You should now have one of the latest betas installed. The active version from `kvm list` should reflect the actual version of kre that you see when you run `k --version`.
 
  
-### Try out the Hello World vNext Demo from David Fowlers github repository
+### Try out the Hello World vNext Demo from David Fowler's github repository
 
-David fowler has created a Demo app for OSX and linux, and put it up in his [personal repository on GitHub](https://github.com/davidfowl/HelloWorldVNext). To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.
+David Fowler has created a Demo app for OSX and Linux, and put it up in his [personal repository on GitHub](https://github.com/davidfowl/HelloWorldVNext). To check everything is working properly, we are going to clone it, and run it locally on our OSX or Linux installation.
 
 * First, install "git" if you don't already have it. OSX users can get it from [git-scm.com](http://git-scm.com/download/mac), or on Ubuntu
 ```
@@ -95,7 +95,7 @@ git clone https://github.com/davidfowl/HelloWorldVNext.git
 ```
 * Navigate into the HelloWorldVNext directory
 ```
-git clone https://github.com/davidfowl/HelloWorldVNext.git
+cd HelloWorldVNext
 ```
 * Restore Packages
 ```
