@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | dev/null]]></title>
   <link href="http://graemechristie.github.com/graemechristie/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://graemechristie.github.com/graemechristie/"/>
-  <updated>2014-10-07T22:46:31+08:00</updated>
+  <updated>2014-10-07T23:02:00+08:00</updated>
   <id>http://graemechristie.github.com/graemechristie/</id>
   <author>
     <name><![CDATA[Graeme Christie]]></name>
@@ -19,7 +19,7 @@
     <updated>2014-09-30T22:13:57+08:00</updated>
     <id>http://graemechristie.github.com/graemechristie/blog/2014/09/30/asp-dot-net-vnext-on-osx-and-linux-redux</id>
     <content type="html"><![CDATA[<p>Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
-so I thought I&rsquo;d do a quick update on how to get up and running on Linux and OSX.</p>
+so I thought I&rsquo;d do a quick update on installing ASP.NET vNext on OSX and Linux.</p>
 
 <h3>Install Mono</h3>
 
@@ -88,13 +88,12 @@ curl https://raw.githubusercontent.com/aspnet/Home/dev/kvminstall.sh | sh &amp;&
 <code>
 kvm upgrade
 </code></li>
-<li><p>Verify the latest install
+<li>Verify the latest install
 <code>
 kvm list
 k --version
-</code></p>
-
-<p>  <img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png" alt="KVM installed" /></p></li>
+</code>
+<img src="https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png" alt="KVM installed" /></li>
 </ul>
 
 
