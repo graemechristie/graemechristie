@@ -22,7 +22,7 @@ Xamarin now maintains Mono packages for OSX and most common Linux distributions,
 
 * Add the Xamarin GPG key to apt
 ```
-wget http://download.mono-project.com/repo/xamarin.gpg && sudo apt-key add xamarin.gpg`
+wget http://download.mono-project.com/repo/xamarin.gpg && sudo apt-key add xamarin.gpg
 ```
 * Add the Xamarin repository to apt
 ```
