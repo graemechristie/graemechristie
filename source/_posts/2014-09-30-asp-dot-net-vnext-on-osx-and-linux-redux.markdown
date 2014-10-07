@@ -7,7 +7,7 @@ categories: ASPNet vNext OSX Linux
 ---
 
 Things have changed a fair bit since my last post back in May, and getting the latest and greatest ASP.NET vNext up and running with Mono is now reasonably straight foreward,
-so I thought I'd do a quick update on how to get up and running on Linux and OSX.
+so I thought I'd do a quick update on installing ASP.NET vNext on OSX and Linux.
 
 ### Install Mono
 
@@ -76,8 +76,7 @@ kvm upgrade
 kvm list
 k --version
 ```
-    
-    ![KVM installed](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png)
+![KVM installed](https://s3-ap-southeast-1.amazonaws.com/uploads-ap.hipchat.com/24631/1103057/Me72unTWXm3RF85/upload.png)
 
 You should now have one of the latest betas installed. The active version from `kvm list` should reflect the actual version of kre that you see when you run `k --version`.
 
